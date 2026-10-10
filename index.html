@@ -1,0 +1,1059 @@
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VoyageLink Travel and Tours</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef7ff;
+    color: #123b63;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 90%;
+    max-width: 970px;
+    margin: 30px auto;
+}
+
+h1,
+h2,
+h3 {
+    color: #064b8c;
+}
+
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header {
+    background: white;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid #dce8f2;
+    padding: 8px 20px;
+}
+
+header img {
+    width: 55px;
+    height: auto;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #064b8c;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #1687e8;
+}
+
+
+/* =========================
+   LOGIN / SIGN UP
+========================= */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 390px;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.auth-card img {
+    width: 95px;
+    margin-bottom: 15px;
+}
+
+.auth-card h2 {
+    margin-bottom: 8px;
+}
+
+.auth-card p {
+    color: #6c8299;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #355c7d;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccdce9;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #1687e8;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    background: #1687e8;
+    color: white;
+    padding: 12px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #096fc5;
+}
+
+.auth-link {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #55718a;
+}
+
+.auth-link span {
+    color: #1687e8;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-box {
+    background: #dff2ff;
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.welcome-text h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    color: #496b88;
+    line-height: 1.5;
+    max-width: 650px;
+    font-size: 14px;
+}
+
+.plane {
+    font-size: 48px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px 15px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #064b8c;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #71869a;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.card-content p {
+    color: #607b94;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.destination-description {
+    min-height: 45px;
+}
+
+.price {
+    color: #087be5;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.small-btn {
+    width: 100%;
+    border: none;
+    background: #1687e8;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.small-btn:hover {
+    background: #096fc5;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.package-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #617b91;
+}
+
+
+/* =========================
+   DESTINATION DETAILS
+========================= */
+
+.destination-detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.destination-detail-image {
+    display: none;
+}
+
+.destination-detail-content {
+    padding: 0;
+}
+
+.destination-detail-content h2 {
+    font-size: 21px;
+    margin-bottom: 7px;
+    color: #182c68;
+}
+
+.destination-detail-content > p {
+    color: #263b70;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 22px;
+}
+
+.destination-info {
+    display: block;
+    margin-bottom: 22px;
+}
+
+.destination-info div {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 8px;
+}
+
+.destination-info span {
+    display: none;
+}
+
+.destination-info strong {
+    color: #182c68;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.destination-info div:first-child {
+    display: none;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    max-width: 700px;
+    margin: auto;
+}
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.booking-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.booking-details h2 {
+    margin-bottom: 10px;
+}
+
+.booking-details p {
+    font-size: 14px;
+    color: #607b94;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.total-box {
+    background: #e9f6ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.total-box p {
+    margin: 0;
+}
+
+.total-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #087be5;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-card {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.summary-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 11px 0;
+    border-bottom: 1px solid #edf2f5;
+    font-size: 14px;
+}
+
+.summary-row span:first-child {
+    color: #6c8194;
+}
+
+.status {
+    background: #dff7e8;
+    color: #16864a;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   BOOKINGS TABLE
+========================= */
+
+.table-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #e7f4ff;
+    color: #064b8c;
+    padding: 12px;
+    text-align: left;
+    font-size: 13px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #edf1f4;
+    font-size: 13px;
+    color: #536f87;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+    display: block;
+    width: 100%;
+    margin: 0 auto 18px;
+    color: #1687e8;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Align back links with their white content cards */
+#destinationDetailPage .back-btn {
+    max-width: 700px;
+}
+
+#bookingPage .back-btn {
+    max-width: 700px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    color: #71869a;
+    font-size: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    header img {
+        width: 50px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .welcome-box {
+        padding: 20px;
+    }
+
+    .welcome-text h1 {
+        font-size: 21px;
+    }
+
+    .plane {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        padding: 18px;
+    }
+
+    .summary-card {
+        padding: 20px;
+    }
+
+    .destination-detail-image {
+        height: 220px;
+    }
+
+    .destination-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     LOGIN PAGE
+================================================== -->
+
+<div id="loginPage" class="auth-container">
+
+    <div class="auth-card">
+
+        <img src="logo.jpg" alt="VoyageLink Logo">
+
+        <h2>VoyageLink</h2>
+
+        <p>Travel and Tour Management System</p>
+
+        <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input
+                type="text"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter password"
+            >
+
+        </div>
+
+        <button class="btn" onclick="login()">
+            Login
+        </button>
+
+        <div class="auth-link">
+
+            Don't have an account?
+
+            <span onclick="showSignup()">
+                Sign Up
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     SIGN UP PAGE
+================================================== -->
+
+<div id="signupPage" class="auth-container hidden">
+
+    <div class="auth-card">
+
+        <img src="logo.jpg" alt="VoyageLink Logo">
+
+        <h2>Create Account</h2>
+
+        <p>Sign up to start planning your journey.</p>
+
+        <div class="input-group">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Enter your name"
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Enter email"
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Create password"
+            >
+
+        </div>
+
+        <button class="btn" onclick="signup()">
+            Create Account
+        </button>
+
+        <div class="auth-link">
+
+            Already have an account?
+
+            <span onclick="showLogin()">
+                Login
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     MAIN WEBSITE
+================================================== -->
+
+<div id="mainWebsite" class="hidden">
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header>
+
+    <img src="logo.jpg" alt="VoyageLink Logo">
+
+    <nav>
+
+        <a onclick="showPage('homePage')">
+            Home
+        </a>
+
+        <a onclick="showPage('destinationsPage')">
+            Destinations
+        </a>
+
+        <a onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ==================================================
+     HOME PAGE
+================================================== -->
+
+<section id="homePage" class="container">
+
+    <div class="welcome-box">
+
+        <div class="welcome-text">
+
+            <h1>
+                Welcome to VoyageLink!
+            </h1>
+
+            <p>
+                Explore destinations and tour packages with our simple
+                Travel and Tour Management System. Plan your trip and
+                choose the package that fits your travel needs.
+            </p>
+
+        </div>
+
+        <div class="plane">
+            ✈️
+        </div>
+
+    </div>
+
+
+    <div class="stats" style="grid-template-columns: 1fr; max-width:220px;">
+        <div class="stat-card">
+            <div class="stat-icon">📍</div>
+            <div class="stat-number" id="destinationCount">5</div>
+            <div class="stat-label">Destinations</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Popular Destinations</h2>
+
+    <div id="popularDestinations" class="card-grid"></div>
+
+</section>
+
+
+<!-- ==================================================
+     DESTINATIONS PAGE
+================================================== -->
+
+<section id="destinationsPage" class="container hidden">
+    <h2 class="section-title">Destinations</h2>
+    <p style="color:#607b94; margin-bottom:20px;">Discover some of the popular destinations offered by VoyageLink.</p>
+    <div id="destinationCards" class="card-grid"></div>
+</section>
+
+
+<!-- ==================================================
+     DESTINATION DETAILS PAGE
+================================================== -->
+
+<section
+    id="destinationDetailPage"
+    class="container hidden"
+>
+
+    <div
+        class="back-btn"
+        onclick="showPage('destinationsPage')"
+    >
+        ← Back to Destinations
+    </div>
+
+
+    <div class="destination-detail-card">
+
+        <div class="destination-detail-content">
+
+            <h2 id="destinationDetailName"></h2>
+
+            <p id="destinationDetailDuration"></p>
+
+            <p id="destinationDetailPrice"></p>
+
+            <p id="destinationDetailSlots"></p>
+
+            <h3 style="color:#182c68; font-size:19px; margin:20px 0 8px;">
+                Inclusions
+            </h3>
+
+            <ul id="destinationDetailInclusions" style="padding-left:18px; color:#263b70; font-size:14px; line-height:1.4; margin-bottom:25px;"></ul>
+
+            <h3 style="color:#182c68; font-size:19px; margin-bottom:8px;">
+                Description
+            </h3>
+
+            <p id="destinationDetailDescription"></p>
+</div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<footer>
+
+    VoyageLink Travel and Tours © 2026
+
+</footer>
+
+
+</div>
+
+
+<script>
+const travelData = {
+  destinations: [
+    { id: 1, name: "El Nido, Palawan", image: "elnido.jpg", description: "Crystal clear waters and beautiful island adventures." },
+    { id: 2, name: "Boracay Island", image: "boracay.jpg", description: "White sand beaches and relaxing island activities." },
+    { id: 3, name: "Baguio", image: "baguio.jpg", description: "Cool weather, pine trees, and peaceful mountain views." },
+    { id: 4, name: "Vigan", image: "vigan.jpg", description: "Historic streets, cultural sights, and classic heritage houses." },
+    { id: 5, name: "Tagaytay", image: "tagaytay.jpg", description: "Relaxing scenery, cool weather, and beautiful nature views." }
+  ]
+};
+
+function login() {
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+  if (!email || !password) {
+    alert("Please enter your email and password.");
+    return;
+  }
+  document.getElementById("loginPage").classList.add("hidden");
+  document.getElementById("mainWebsite").classList.remove("hidden");
+  showPage("homePage");
+}
+
+function showSignup() {
+  document.getElementById("loginPage").classList.add("hidden");
+  document.getElementById("signupPage").classList.remove("hidden");
+}
+
+function showLogin() {
+  document.getElementById("signupPage").classList.add("hidden");
+  document.getElementById("loginPage").classList.remove("hidden");
+}
+
+function signup() {
+  const name = document.getElementById("signupName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value.trim();
+  if (!name || !email || !password) {
+    alert("Please complete all fields.");
+    return;
+  }
+  alert("Account created successfully! You can now login.");
+  document.getElementById("signupName").value = "";
+  document.getElementById("signupEmail").value = "";
+  document.getElementById("signupPassword").value = "";
+  showLogin();
+}
+
+function logout() {
+  document.getElementById("mainWebsite").classList.add("hidden");
+  document.getElementById("signupPage").classList.add("hidden");
+  document.getElementById("loginPage").classList.remove("hidden");
+  document.getElementById("loginEmail").value = "";
+  document.getElementById("loginPassword").value = "";
+}
+
+function showPage(pageID) {
+  ["homePage", "destinationsPage", "destinationDetailPage"].forEach(function(page) {
+    document.getElementById(page).classList.add("hidden");
+  });
+  document.getElementById(pageID).classList.remove("hidden");
+  if (pageID === "destinationsPage") displayDestinations();
+  if (pageID === "homePage") updateDashboard();
+}
+
+function updateDashboard() {
+  document.getElementById("destinationCount").textContent = travelData.destinations.length;
+  displayPopularDestinations();
+}
+
+function displayDestinations() {
+  const container = document.getElementById("destinationCards");
+  container.innerHTML = "";
+  travelData.destinations.forEach(function(destination) {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${destination.image}" class="card-image" alt="${destination.name}">
+        <div class="card-content">
+          <h3>${destination.name}</h3>
+          <p class="destination-description">${destination.description}</p>
+          <button class="small-btn" onclick="viewDestination(${destination.id})">View Details</button>
+        </div>
+      </div>`;
+  });
+}
+
+function displayPopularDestinations() {
+  const container = document.getElementById("popularDestinations");
+  if (!container) return;
+  container.innerHTML = "";
+  travelData.destinations.slice(0, 3).forEach(function(destination) {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${destination.image}" class="card-image" alt="${destination.name}">
+        <div class="card-content">
+          <h3>${destination.name}</h3>
+          <p>${destination.description}</p>
+          <button class="small-btn" onclick="viewDestination(${destination.id})">View Details</button>
+        </div>
+      </div>`;
+  });
+}
+
+function viewDestination(id) {
+  const destination = travelData.destinations.find(function(item) { return item.id === id; });
+  if (!destination) return;
+  document.getElementById("destinationDetailName").textContent = destination.name;
+  document.getElementById("destinationDetailDuration").textContent = "Explore this destination with VoyageLink.";
+  document.getElementById("destinationDetailPrice").textContent = "Contact VoyageLink for package prices.";
+  document.getElementById("destinationDetailSlots").textContent = "Destination information";
+  const inclusions = ["Travel guidance", "Destination sightseeing"];
+  if (destination.name === "El Nido, Palawan" || destination.name === "Boracay Island") inclusions.push("Island activities");
+  document.getElementById("destinationDetailInclusions").innerHTML = inclusions.map(function(item) { return "<li>" + item + "</li>"; }).join("");
+  document.getElementById("destinationDetailDescription").textContent = destination.description;
+  showPage("destinationDetailPage");
+}
+
+updateDashboard();
+</script>
+
+</body>
+</html>
